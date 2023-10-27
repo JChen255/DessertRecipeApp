@@ -8,24 +8,15 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var homeViewModel = HomeViewModel()
-    @State private var isSorted = false
-    
-    private var sortedDesserts: [Dessert] {
-        if isSorted {
-            return homeViewModel.filteredDesserts.reversed()
-        } else {
-            return homeViewModel.filteredDesserts
-        }
-    }
     
     var body: some View {
         NavigationStack{
             
-            SortView(count: homeViewModel.filteredDesserts.count, isSorted: $isSorted)
+            SortView(count: homeViewModel.filteredDesserts.count, isSorted: $homeViewModel.isSorted)
             
             ScrollView(.vertical, showsIndicators: false){
                 LazyVStack{
-                    ForEach(sortedDesserts) { dessert in
+                    ForEach(homeViewModel.sortedDesserts) { dessert in
                         NavigationLink(destination: RecipeDetailView(recipeId: dessert.id)){
                             CardView(dessert: dessert)
                             }
