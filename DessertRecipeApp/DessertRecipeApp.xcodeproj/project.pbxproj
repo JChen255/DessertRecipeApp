@@ -95,7 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				6AA857F32AEB36B4009510DE /* DessertRecipeAppApp.swift */,
-				6AA857F52AEB36B4009510DE /* ContentView.swift */,
+				6AA858202AEB37CC009510DE /* Models */,
+				6AA8581D2AEB37AB009510DE /* Views */,
+				6AA8581E2AEB37B6009510DE /* ViewModels */,
+				6AA8581F2AEB37BB009510DE /* Services */,
 				6AA857F72AEB36B5009510DE /* Assets.xcassets */,
 				6AA857F92AEB36B5009510DE /* Preview Content */,
 			);
@@ -125,6 +128,35 @@
 				6AA858102AEB36B5009510DE /* DessertRecipeAppUITestsLaunchTests.swift */,
 			);
 			path = DessertRecipeAppUITests;
+			sourceTree = "<group>";
+		};
+		6AA8581D2AEB37AB009510DE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6AA857F52AEB36B4009510DE /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6AA8581E2AEB37B6009510DE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6AA8581F2AEB37BB009510DE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6AA858202AEB37CC009510DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
