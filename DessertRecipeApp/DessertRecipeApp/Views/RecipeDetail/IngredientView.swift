@@ -8,10 +8,22 @@
 import SwiftUI
 
 struct IngredientView: View {
+    var ingredients = [Ingredient]()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            ForEach(ingredients) { ingredient in
+                HStack{
+                    Text(ingredient.name)
+                    Spacer()
+                    Text(ingredient.measurement)
+                }
+                .padding(.horizontal)
+            }
+        }
+        .padding(.bottom, 20)
     }
 }
+
 
 #Preview {
     IngredientView()

@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct BodyView: View {
+    @Binding var showInstruction: Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Button{
+                showInstruction.toggle()
+            }label: {
+                Text("Instruction")
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(showInstruction ? .orange : .gray)
+                    .padding(.horizontal, 30)
+            }
+            Button{
+                showInstruction.toggle()
+            }label: {
+                Text("Ingredients")
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(showInstruction ? .gray : .orange)
+                    .padding(.horizontal, 30)
+            }
+        }
     }
 }
 
 #Preview {
-    BodyView()
+    BodyView(showInstruction: .constant(false))
 }

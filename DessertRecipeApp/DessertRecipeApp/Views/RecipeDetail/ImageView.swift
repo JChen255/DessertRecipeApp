@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ImageView: View {
+    var recipe: Recipe?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        AsyncImage(url: URL(string: recipe?.thumbnailUrl ?? "")) { image in
+            image
+                .resizable()
+                .frame(width: 420, height: 290)
+        } placeholder: {
+            Rectangle()
+                .foregroundColor(.white)
+                .frame(width: 420, height: 290)
+        }
     }
 }
 
