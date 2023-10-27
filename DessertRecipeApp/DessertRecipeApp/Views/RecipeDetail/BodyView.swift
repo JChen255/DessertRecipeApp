@@ -32,6 +32,7 @@ struct BodyView: View {
             }
             .scaleEffect(showInstruction ? 0.9 : 1.1)
         }
+        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
     }
 }
 

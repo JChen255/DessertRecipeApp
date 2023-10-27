@@ -19,6 +19,7 @@ struct HeadView: View {
                 TagView(recipe: recipe)
             }
         }
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .padding(.bottom)
     }
 }
