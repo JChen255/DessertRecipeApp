@@ -24,11 +24,13 @@ struct SortView: View {
                     .font(.callout)
                     .foregroundColor(.gray)
                     .bold()
+                
                 Image(systemName: "arrow.up.arrow.down")
                     .foregroundColor(.black)
             }
             
         }
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .padding(.horizontal, 20)
         .padding(.vertical, 8)
         

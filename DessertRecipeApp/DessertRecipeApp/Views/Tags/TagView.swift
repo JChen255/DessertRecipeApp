@@ -12,20 +12,21 @@ struct TagView: View {
     var body: some View {
         HStack{
             Text(recipe?.category ?? "category")
-                .font(.system(size: 16))
+                .font(.caption)
                 .foregroundColor(.black)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 8)
                 .background(.bar)
                 .cornerRadius(20)
             Text(recipe?.area ?? "area")
-                .font(.system(size: 16))
+                .font(.caption)
                 .foregroundColor(.black)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 8)
                 .background(.bar)
                 .cornerRadius(20)
         }
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
     }
 }
 

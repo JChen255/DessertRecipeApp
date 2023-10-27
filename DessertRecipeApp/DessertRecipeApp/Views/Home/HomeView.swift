@@ -26,6 +26,7 @@ struct HomeView: View {
             .navigationTitle("Recipes 🍰")
             .searchable(text: $homeViewModel.keyword, placement: .navigationBarDrawer(displayMode: .always))
         }
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .tint(.orange)
         .task {
             do{

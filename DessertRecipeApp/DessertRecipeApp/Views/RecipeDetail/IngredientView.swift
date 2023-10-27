@@ -22,6 +22,7 @@ struct IngredientView: View {
             }
         }
         .padding(.bottom, 20)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility1)
     }
 }
 

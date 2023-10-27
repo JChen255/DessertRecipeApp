@@ -16,6 +16,7 @@ struct InstructionView: View {
                 .frame(width: 330)
                 .padding(.all, 15)
         }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
     }
 }
 #Preview {
