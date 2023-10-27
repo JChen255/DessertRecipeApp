@@ -5,6 +5,7 @@
 
 import Foundation
 
+@MainActor
 class RecipeDetailViewModel: ObservableObject {
     @Published var recipes = [Recipe]()
     
@@ -45,6 +46,21 @@ class RecipeDetailViewModel: ObservableObject {
         }
         
         return ingredients
+    }
+    
+    func fetchRecipes(for recipeId: String?) async {
+        do {
+            let recipeData = try await APIServices.getRecipe(recipeId ?? "")
+            self.recipes = recipeData.recipes
+        } catch AppError.invalidUrl {
+            print("Invalid Url")
+        } catch AppError.invalidData {
+            print("Invalid Data")
+        } catch AppError.invalidResponse {
+            print("Invalid Response")
+        } catch {
+            print("Unexpected Error")
+        }
     }
 
 }

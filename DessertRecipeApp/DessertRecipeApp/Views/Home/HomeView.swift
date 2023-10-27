@@ -29,17 +29,7 @@ struct HomeView: View {
         .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .tint(.orange)
         .task {
-            do{
-                homeViewModel.desserts = try await APIServices.getDessert().desserts
-            }catch AppError.invalidUrl{
-                print("Invalid Url")
-            }catch AppError.invalidData{
-                print("Invalid Data")
-            }catch AppError.invalidResponse{
-                print("Invalid Response")
-            }catch {
-                print("Unexpected Error")
-            }
+            await homeViewModel.fetchDesserts()
         }
         
     }
