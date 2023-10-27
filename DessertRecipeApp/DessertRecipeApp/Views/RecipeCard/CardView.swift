@@ -12,10 +12,12 @@ struct CardView: View {
     var body: some View {
         ZStack{
             Rectangle()
-                .frame(width: 365, height: 140)
+                .frame(maxWidth: .infinity)
+                .frame(height: 150)
                 .cornerRadius(10)
                 .foregroundStyle(.white)
                 .shadow(radius: 2)
+                .padding(.horizontal, 10)
             HStack{
                 CachedImage(url: URL(string: dessert?.thumbnailUrl ?? ""))
                 Text(dessert?.name ?? "Dessert Name")
@@ -27,9 +29,8 @@ struct CardView: View {
                     .lineLimit(2)
                     .dynamicTypeSize(...DynamicTypeSize.accessibility1)
             }
-            .frame(maxWidth: 330)
-            .padding(.all)
-            
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 30)
         }
     }
 }

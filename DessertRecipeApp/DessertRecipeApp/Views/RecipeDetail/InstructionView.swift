@@ -13,8 +13,7 @@ struct InstructionView: View {
         Divider()
         ScrollView(showsIndicators: false){
             Text(recipe?.instruction ?? "Instruction detail")
-                .frame(width: 330)
-                .padding(.all, 15)
+                .padding(.all, 30)
         }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
     }
