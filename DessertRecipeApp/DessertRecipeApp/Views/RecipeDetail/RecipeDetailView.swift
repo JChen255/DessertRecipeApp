@@ -13,29 +13,32 @@ struct RecipeDetailView: View {
     var recipeId: String?
     
     var body: some View {
-        VStack{
-            ImageView(recipe: recipeDetailViewModel.recipe)
-            HeadView(recipe: recipeDetailViewModel.recipes.first)
-            BodyView(showInstruction: $showInstruction)
-            
-            if(showInstruction){
-                InstructionView(recipe:recipeDetailViewModel.recipes.first)
-            }else{
-                IngredientView(ingredients: recipeDetailViewModel.ingredients)
+        GeometryReader{ geo in
+            VStack{
+                ImageView(recipe: recipeDetailViewModel.recipe)
+                    .frame(width: geo.size.width, height: geo.size.height * 0.38)
+                HeadView(recipe: recipeDetailViewModel.recipes.first)
+                BodyView(showInstruction: $showInstruction)
+                
+                if(showInstruction){
+                    InstructionView(recipe:recipeDetailViewModel.recipes.first)
+                }else{
+                    IngredientView(ingredients: recipeDetailViewModel.ingredients)
+                }
             }
-        }
-        .ignoresSafeArea()
-        .task {
-            do{
-                recipeDetailViewModel.recipes = try await APIServices.getRecipe(recipeId ?? "").recipes
-            }catch AppError.invalidUrl{
-                print("Invalid Url")
-            }catch AppError.invalidData{
-                print("Invalid Data")
-            }catch AppError.invalidResponse{
-                print("Invalid Response")
-            }catch {
-                print("Unexpected Error")
+            .ignoresSafeArea()
+            .task {
+                do{
+                    recipeDetailViewModel.recipes = try await APIServices.getRecipe(recipeId ?? "").recipes
+                }catch AppError.invalidUrl{
+                    print("Invalid Url")
+                }catch AppError.invalidData{
+                    print("Invalid Data")
+                }catch AppError.invalidResponse{
+                    print("Invalid Response")
+                }catch {
+                    print("Unexpected Error")
+                }
             }
         }
     }

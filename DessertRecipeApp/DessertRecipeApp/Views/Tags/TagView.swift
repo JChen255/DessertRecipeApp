@@ -12,14 +12,14 @@ struct TagView: View {
     var body: some View {
         HStack{
             Text(recipe?.category ?? "category")
-                .font(.caption)
+                .font(.callout)
                 .foregroundColor(.black)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 8)
                 .background(.bar)
                 .cornerRadius(20)
             Text(recipe?.area ?? "area")
-                .font(.caption)
+                .font(.callout)
                 .foregroundColor(.black)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 8)
