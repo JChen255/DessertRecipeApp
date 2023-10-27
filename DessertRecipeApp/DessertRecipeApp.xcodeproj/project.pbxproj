@@ -28,6 +28,7 @@
 		6AA8583D2AEB3A43009510DE /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA8583C2AEB3A43009510DE /* Ingredient.swift */; };
 		6AA858412AEB3AAB009510DE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA858402AEB3AAB009510DE /* HomeViewModel.swift */; };
 		6AA858432AEB3AB7009510DE /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA858422AEB3AB7009510DE /* RecipeDetailViewModel.swift */; };
+		6AA858452AEB4423009510DE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA858442AEB4423009510DE /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		6AA8583C2AEB3A43009510DE /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		6AA858402AEB3AAB009510DE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6AA858422AEB3AB7009510DE /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
+		6AA858442AEB4423009510DE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		6AA8581F2AEB37BB009510DE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6AA858442AEB4423009510DE /* APIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AA858452AEB4423009510DE /* APIService.swift in Sources */,
 				6AA858322AEB394E009510DE /* IngredientView.swift in Sources */,
 				6AA858342AEB3965009510DE /* TagView.swift in Sources */,
 				6AA8583D2AEB3A43009510DE /* Ingredient.swift in Sources */,
