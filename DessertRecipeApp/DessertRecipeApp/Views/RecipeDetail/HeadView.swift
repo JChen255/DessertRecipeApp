@@ -12,7 +12,7 @@ struct HeadView: View {
     var body: some View {
         VStack {
             Text(recipe?.name ?? "Recipe")
-                .frame(maxWidth: .infinity, alignment: .center)
+                .frame(maxWidth: 390, alignment: .center)
                 .font(.title)
                 .bold()
             HStack{

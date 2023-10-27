@@ -17,18 +17,7 @@ struct CardView: View {
                 .foregroundStyle(.white)
                 .shadow(radius: 2)
             HStack{
-                AsyncImage(url: URL(string: dessert?.thumbnailUrl ?? "")) { image in
-                    image
-                        .resizable()
-                        .frame(width: 120, height: 120)
-                        .cornerRadius(10)
-                } placeholder: {
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .frame(width: 120, height: 120)
-                        .cornerRadius(10)
-                        .shadow(radius: 2)
-                }
+                CachedImage(url: URL(string: dessert?.thumbnailUrl ?? ""))
                 Text(dessert?.name ?? "")
                     .frame(maxWidth: .infinity, alignment: .center)
                     .foregroundColor(.black)
