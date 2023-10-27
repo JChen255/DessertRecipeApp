@@ -8,10 +8,27 @@
 import SwiftUI
 
 struct TagView: View {
+    var recipe: Recipe?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Text(recipe?.category ?? "category")
+                .font(.system(size: 16))
+                .foregroundColor(.black)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 8)
+                .background(.bar)
+                .cornerRadius(20)
+            Text(recipe?.area ?? "area")
+                .font(.system(size: 16))
+                .foregroundColor(.black)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 8)
+                .background(.bar)
+                .cornerRadius(20)
+        }
     }
 }
+
 
 #Preview {
     TagView()

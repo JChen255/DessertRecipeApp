@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct HeadView: View {
+    var recipe: Recipe?
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(recipe?.name ?? "Recipe")
+                .frame(maxWidth: .infinity, alignment: .center)
+                .font(.title)
+                .bold()
+            HStack{
+                TagView(recipe: recipe)
+            }
+        }
+        .padding(.bottom)
     }
 }
 
