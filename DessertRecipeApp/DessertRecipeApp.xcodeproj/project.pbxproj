@@ -29,6 +29,7 @@
 		6AA858412AEB3AAB009510DE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA858402AEB3AAB009510DE /* HomeViewModel.swift */; };
 		6AA858432AEB3AB7009510DE /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA858422AEB3AB7009510DE /* RecipeDetailViewModel.swift */; };
 		6AA858452AEB4423009510DE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA858442AEB4423009510DE /* APIService.swift */; };
+		6AA858482AEBF2C3009510DE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA858472AEBF2C3009510DE /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		6AA858402AEB3AAB009510DE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6AA858422AEB3AB7009510DE /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 		6AA858442AEB4423009510DE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		6AA858472AEBF2C3009510DE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		6AA8581D2AEB37AB009510DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6AA858462AEBF2AB009510DE /* SplashScreen */,
 				6AA858242AEB38B2009510DE /* Home */,
 				6AA858352AEB398A009510DE /* RecipeDetail */,
 				6AA858222AEB38A5009510DE /* RecipeCard */,
@@ -250,6 +253,14 @@
 				6AA858402AEB3AAB009510DE /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		6AA858462AEBF2AB009510DE /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6AA858472AEBF2C3009510DE /* SplashScreenView.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 				6AA8582C2AEB3926009510DE /* HeadView.swift in Sources */,
 				6AA858302AEB3945009510DE /* InstructionView.swift in Sources */,
 				6AA858282AEB3914009510DE /* RecipeDetailView.swift in Sources */,
+				6AA858482AEBF2C3009510DE /* SplashScreenView.swift in Sources */,
 				6AA858372AEB39A8009510DE /* CardView.swift in Sources */,
 				6AA8583B2AEB3A3B009510DE /* Recipe.swift in Sources */,
 				6AA858392AEB3A34009510DE /* Dessert.swift in Sources */,

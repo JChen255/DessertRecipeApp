@@ -9,7 +9,7 @@ import SwiftUI
 struct DessertRecipeAppApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            SplashScreenView()
         }
     }
 }

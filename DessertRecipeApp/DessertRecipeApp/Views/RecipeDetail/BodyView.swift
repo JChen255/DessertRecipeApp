@@ -20,6 +20,7 @@ struct BodyView: View {
                     .foregroundColor(showInstruction ? .orange : .gray)
                     .padding(.horizontal, 30)
             }
+            .scaleEffect(showInstruction ? 1.1 : 0.9)
             Button{
                 showInstruction.toggle()
             }label: {
@@ -29,6 +30,7 @@ struct BodyView: View {
                     .foregroundColor(showInstruction ? .gray : .orange)
                     .padding(.horizontal, 30)
             }
+            .scaleEffect(showInstruction ? 0.9 : 1.1)
         }
     }
 }

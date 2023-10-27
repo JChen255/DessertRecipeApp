@@ -11,7 +11,6 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack{
-            
             SortView(count: homeViewModel.filteredDesserts.count, isSorted: $homeViewModel.isSorted)
             
             ScrollView(.vertical, showsIndicators: false){
@@ -41,6 +40,7 @@ struct HomeView: View {
                 print("Unexpected Error")
             }
         }
+        
     }
 }
 

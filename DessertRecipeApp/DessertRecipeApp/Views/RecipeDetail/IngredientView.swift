@@ -13,7 +13,8 @@ struct IngredientView: View {
         List{
             ForEach(ingredients) { ingredient in
                 HStack{
-                    Text(ingredient.name)
+                    Text(ingredient.name.capitalized)
+                        .bold()
                     Spacer()
                     Text(ingredient.measurement)
                 }
