@@ -10,12 +10,11 @@ import SwiftUI
 struct RecipeDetailView: View {
     @StateObject var recipeDetailViewModel = RecipeDetailViewModel()
     @State private var showInstruction: Bool = true
-    @State private var recipeList:[Recipe]?
     var recipeId: String?
     
     var body: some View {
         VStack{
-            ImageView(recipe: recipeDetailViewModel.recipes.first)
+            ImageView(recipe: recipeDetailViewModel.recipe)
             HeadView(recipe: recipeDetailViewModel.recipes.first)
             BodyView(showInstruction: $showInstruction)
             

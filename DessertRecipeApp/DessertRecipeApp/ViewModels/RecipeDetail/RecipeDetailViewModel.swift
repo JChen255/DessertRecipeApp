@@ -8,6 +8,11 @@ import Foundation
 class RecipeDetailViewModel: ObservableObject {
     @Published var recipes = [Recipe]()
     
+    var recipe: Recipe?{
+        guard let firstRecipe = recipes.first else {return nil}
+        return firstRecipe
+    }
+    
     var ingredients: [Ingredient] {
         var ingredientList: [String] = []
         var measurementList: [String] = []
