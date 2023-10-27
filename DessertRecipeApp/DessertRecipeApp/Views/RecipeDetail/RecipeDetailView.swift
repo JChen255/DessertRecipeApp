@@ -28,17 +28,7 @@ struct RecipeDetailView: View {
             }
             .ignoresSafeArea()
             .task {
-                do{
-                    recipeDetailViewModel.recipes = try await APIServices.getRecipe(recipeId ?? "").recipes
-                }catch AppError.invalidUrl{
-                    print("Invalid Url")
-                }catch AppError.invalidData{
-                    print("Invalid Data")
-                }catch AppError.invalidResponse{
-                    print("Invalid Response")
-                }catch {
-                    print("Unexpected Error")
-                }
+                await recipeDetailViewModel.fetchRecipes(for: recipeId)
             }
         }
     }
