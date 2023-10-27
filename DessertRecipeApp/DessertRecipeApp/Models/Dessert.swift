@@ -2,7 +2,24 @@
 //  Dessert.swift
 //  DessertRecipeApp
 //
-//  Created by Janine Chen on 10/26/23.
-//
 
-import Foundation
+
+struct Dessert: Codable, Identifiable {
+    let name: String
+    let thumbnailUrl: String
+    let id: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "strMeal"
+        case thumbnailUrl = "strMealThumb"
+        case id = "idMeal"
+    }
+}
+
+struct Desserts: Codable {
+    let desserts: [Dessert]
+    
+    enum CodingKeys: String, CodingKey {
+        case desserts = "meals"
+    }
+}
