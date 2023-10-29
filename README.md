@@ -2,12 +2,12 @@
 Dessert Recipe App is a native iOS application designed for iOS 16 and above, developed using Xcode 15.0.1. This app empowers dessert enthusiasts to explore a wide variety of dessert recipes. Users can conveniently sort recipes alphabetically, search for recipes by name, and delve into detailed information about each recipe, including its image, name, category, area, instructions, and ingredients.
 
 ## Preview
-<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/0ae47c60-b7bf-4a2e-97f9-b2d0f464a081" width="280" >
-<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/3ed6f4df-2dda-4e23-9e97-1ec2eaee69ea" width="280" >
-<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/ca692fee-52b1-40f9-8f79-075c4a01a0af" width="280" >
-<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/aabf6303-6605-42f3-b3c1-00e29fadd8e4" width="280" >
-<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/a48a4ce4-6f9b-4df4-82a3-25b42aa922d0" width="280" >
-<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/662cbc6f-57a2-42d2-8ae0-2aed47e30e23" width="280" >
+<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/0ae47c60-b7bf-4a2e-97f9-b2d0f464a081" width="145" >
+<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/3ed6f4df-2dda-4e23-9e97-1ec2eaee69ea" width="145" >
+<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/ca692fee-52b1-40f9-8f79-075c4a01a0af" width="145" >
+<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/aabf6303-6605-42f3-b3c1-00e29fadd8e4" width="145" >
+<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/a48a4ce4-6f9b-4df4-82a3-25b42aa922d0" width="145" >
+<img src="https://github.com/JChen255/DessertRecipeApp/assets/98052549/662cbc6f-57a2-42d2-8ae0-2aed47e30e23" width="145" >
 
 ## APIs used
 
