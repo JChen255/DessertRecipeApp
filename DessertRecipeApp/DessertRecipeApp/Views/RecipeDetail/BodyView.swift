@@ -2,11 +2,11 @@
 //  BodyView.swift
 //  DessertRecipeApp
 //
-//  Created by Janine Chen on 10/26/23.
-//
+
 
 import SwiftUI
 
+// Display instruction or ingredient lists
 struct BodyView: View {
     @Binding var showInstruction: Bool
     var body: some View {

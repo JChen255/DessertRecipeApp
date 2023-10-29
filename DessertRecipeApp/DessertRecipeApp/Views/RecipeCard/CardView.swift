@@ -2,11 +2,10 @@
 //  CardView.swift
 //  DessertRecipeApp
 //
-//  Created by Janine Chen on 10/26/23.
-//
 
 import SwiftUI
 
+// Resuable view to display each dessert
 struct CardView: View {
     var dessert: Dessert?
     var body: some View {
@@ -19,6 +18,7 @@ struct CardView: View {
                 .shadow(radius: 2)
                 .padding(.horizontal, 10)
             HStack{
+                // Image view that supports cache mechanism
                 CachedImage(url: URL(string: dessert?.thumbnailUrl ?? ""))
                 Text(dessert?.name ?? "Dessert Name")
                     .frame(maxWidth: .infinity, alignment: .center)

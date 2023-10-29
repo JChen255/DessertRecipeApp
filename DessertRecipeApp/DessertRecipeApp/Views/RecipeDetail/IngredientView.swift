@@ -2,14 +2,14 @@
 //  IngredientView.swift
 //  DessertRecipeApp
 //
-//  Created by Janine Chen on 10/26/23.
-//
+
 
 import SwiftUI
 
 struct IngredientView: View {
     var ingredients = [Ingredient]()
     var body: some View {
+        // Use a list to display all the ingredients of the recipe
         List{
             ForEach(ingredients) { ingredient in
                 HStack{

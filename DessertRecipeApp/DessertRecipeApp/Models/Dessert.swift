@@ -4,7 +4,7 @@
 //
 
 
-struct Dessert: Codable, Identifiable {
+struct Dessert: Codable, Identifiable, Equatable{
     let name: String
     let thumbnailUrl: String
     let id: String

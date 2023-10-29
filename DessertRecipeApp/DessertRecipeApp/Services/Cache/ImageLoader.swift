@@ -9,9 +9,10 @@ import UIKit
 @MainActor
 class ImageLoader: ObservableObject{
     @Published var uiImage: UIImage?
-    private static let cache = NSCache<NSString, UIImage>()
+    static let cache = NSCache<NSString, UIImage>()
     private var task: Task<Void, Error>?
     
+    // Function to fetch an image from a given URL asynchronously
     func fetchImage(_ url: URL?) async throws{
         
         guard let url = url else{
