@@ -2,11 +2,10 @@
 //  TagView.swift
 //  DessertRecipeApp
 //
-//  Created by Janine Chen on 10/26/23.
-//
 
 import SwiftUI
 
+// Resuable view to display each recipe's category and area
 struct TagView: View {
     var recipe: Recipe?
     var body: some View {

@@ -2,24 +2,29 @@
 //  RecipeDetailView.swift
 //  DessertRecipeApp
 //
-//  Created by Janine Chen on 10/26/23.
-//
 
 import SwiftUI
 
+// Resuable view to display detailed info of each dessert recipe
+// Contains recipe image, name, category, area, instruction and ingredients list.
 struct RecipeDetailView: View {
     @StateObject var recipeDetailViewModel = RecipeDetailViewModel()
     @State private var showInstruction: Bool = true
     var recipeId: String?
     
     var body: some View {
+        // Use GeometryReader for more adaptive layout
         GeometryReader{ geo in
             VStack{
+                // Display recipe image
                 ImageView(recipe: recipeDetailViewModel.recipe)
                     .frame(width: geo.size.width, height: geo.size.height * 0.38)
-                HeadView(recipe: recipeDetailViewModel.recipes.first)
-                BodyView(showInstruction: $showInstruction)
                 
+                // Display recipe name, category and area
+                HeadView(recipe: recipeDetailViewModel.recipes.first)
+                
+                // Display reipe instruction or ingredients
+                BodyView(showInstruction: $showInstruction)
                 if(showInstruction){
                     InstructionView(recipe:recipeDetailViewModel.recipes.first)
                 }else{
@@ -33,7 +38,6 @@ struct RecipeDetailView: View {
         }
     }
 }
-
 
 #Preview {
     RecipeDetailView()

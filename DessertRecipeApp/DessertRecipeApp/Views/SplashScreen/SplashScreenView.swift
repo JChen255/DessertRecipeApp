@@ -6,6 +6,8 @@
 
 import SwiftUI
 
+// A splash screen displayed when launch the app
+// Switch to the home view after 2s
 struct SplashScreenView: View {
     @State private var isActive = false
     @State private var size = 0.8
