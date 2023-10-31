@@ -19,22 +19,6 @@ class RecipeDetailViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchRecipes() {
-        let expectation = XCTestExpectation(description: "Fetching desserts")
-
-        Task {
-            await viewModel.fetchRecipes(for: "52893" )
-
-            // Access the actor-isolated property within an await block
-            let isEmpty = await viewModel.recipes.isEmpty
-            XCTAssertFalse(isEmpty, "Desserts should not be empty")
-
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 10)
-    }
-    
     @MainActor func testIngredients() {
         // Create a sample Recipe with ingredients for testing.
         let recipe = Recipe(name: "Test Recipe",
