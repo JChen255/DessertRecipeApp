@@ -61,7 +61,7 @@ class RecipeDetailViewModel: ObservableObject {
     // Attempt to fetch recipe data from an API service based on the provided recipe ID.
     func fetchRecipes(for recipeId: String?) async {
         do {
-            let recipeData = try await APIServices.getRecipe(recipeId ?? "")
+            let recipeData: Recipes = try await APIServices.fetchData(from: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId ?? "")")
             self.recipes = recipeData.recipes
         } catch AppError.invalidUrl {
             print("Invalid Url")
@@ -73,5 +73,4 @@ class RecipeDetailViewModel: ObservableObject {
             print("Unexpected Error")
         }
     }
-
 }
