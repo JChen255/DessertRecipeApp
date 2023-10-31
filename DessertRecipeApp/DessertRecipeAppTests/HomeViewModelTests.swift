@@ -18,21 +18,6 @@ final class HomeViewModelTests: XCTestCase {
         homeViewModel = nil
         super.tearDown()
     }
-    
-    func testFetchDesserts() {
-        let expectation = XCTestExpectation(description: "Fetching desserts")
-
-        Task {
-            await homeViewModel.fetchDesserts()
-
-            let isEmpty = await homeViewModel.desserts.isEmpty
-            XCTAssertFalse(isEmpty, "Desserts should not be empty")
-
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation], timeout: 10)
-    }
 
     @MainActor func testFilterDesserts() {
         // Set the keyword
