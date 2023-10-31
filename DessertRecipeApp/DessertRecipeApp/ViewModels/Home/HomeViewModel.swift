@@ -33,8 +33,8 @@ class HomeViewModel: ObservableObject {
     // Function to fetch desserts asynchronously from an API.
     func fetchDesserts() async {
         do {
-            let desserts = try await APIServices.getDessert().desserts
-            self.desserts = desserts
+            let desserts: Desserts = try await APIServices.fetchData(from: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
+            self.desserts = desserts.desserts
         } catch AppError.invalidUrl {
             print("Invalid Url")
         } catch AppError.invalidData {
