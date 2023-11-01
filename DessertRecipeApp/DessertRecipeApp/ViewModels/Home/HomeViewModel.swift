@@ -7,7 +7,6 @@ import Foundation
 
 // HomeViewModel: to facilitate communication between home views and dessert model
 
-@MainActor
 class HomeViewModel: ObservableObject {
     @Published var desserts = [Dessert]()
     @Published var keyword: String = ""
@@ -34,7 +33,9 @@ class HomeViewModel: ObservableObject {
     func fetchDesserts() async {
         do {
             let desserts: Desserts = try await APIServices.fetchData(from: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
-            self.desserts = desserts.desserts
+            DispatchQueue.main.async {
+                self.desserts = desserts.desserts
+            }
         } catch AppError.invalidUrl {
             print("Invalid Url")
         } catch AppError.invalidData {

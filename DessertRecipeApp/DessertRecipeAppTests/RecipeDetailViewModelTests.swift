@@ -9,7 +9,7 @@ class RecipeDetailViewModelTests: XCTestCase {
     
     var viewModel: RecipeDetailViewModel!
     
-    @MainActor override func setUp() {
+    override func setUp() {
         super.setUp()
         viewModel = RecipeDetailViewModel()
     }
@@ -19,7 +19,7 @@ class RecipeDetailViewModelTests: XCTestCase {
         super.tearDown()
     }
     
-    @MainActor func testIngredients() {
+    func testIngredients() {
         // Create a sample Recipe with ingredients for testing.
         let recipe = Recipe(name: "Test Recipe",
                             category: "Test Category",
