@@ -8,7 +8,6 @@ import Foundation
 // RecipeDetailViewModel: to facilitate communication
 // between recipedetail views and recipe and ingredient models
 
-@MainActor
 class RecipeDetailViewModel: ObservableObject {
     @Published var recipes = [Recipe]()
     
@@ -62,7 +61,9 @@ class RecipeDetailViewModel: ObservableObject {
     func fetchRecipes(for recipeId: String?) async {
         do {
             let recipeData: Recipes = try await APIServices.fetchData(from: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId ?? "")")
-            self.recipes = recipeData.recipes
+            DispatchQueue.main.async {
+                self.recipes = recipeData.recipes
+            }
         } catch AppError.invalidUrl {
             print("Invalid Url")
         } catch AppError.invalidData {

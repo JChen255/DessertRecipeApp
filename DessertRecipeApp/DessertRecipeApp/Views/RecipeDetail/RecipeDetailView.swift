@@ -25,6 +25,7 @@ struct RecipeDetailView: View {
                 
                 // Display reipe instruction or ingredients
                 BodyView(showInstruction: $showInstruction)
+                
                 if(showInstruction){
                     InstructionView(recipe:recipeDetailViewModel.recipes.first)
                 }else{

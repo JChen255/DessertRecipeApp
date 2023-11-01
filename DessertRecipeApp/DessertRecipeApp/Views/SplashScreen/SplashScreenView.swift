@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-// A splash screen displayed when launch the app
+// A splash screen displays when launch the app
 // Switch to the home view after 2s
 struct SplashScreenView: View {
     @State private var isActive = false
@@ -30,14 +30,14 @@ struct SplashScreenView: View {
                 .opacity(opacity)
                 .onAppear{
                     withAnimation(.easeIn(duration: 1.0)) {
-                        self.size = 1.0
-                        self.opacity = 1.0
+                        size = 1.0
+                        opacity = 1.0
                     }
                 }
             }
             .onAppear{
                 DispatchQueue.main.asyncAfter(deadline: .now()+2.0){
-                    self.isActive = true
+                    isActive = true
                 }
             }
         }

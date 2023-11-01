@@ -9,7 +9,7 @@ import XCTest
 final class HomeViewModelTests: XCTestCase {
     var homeViewModel: HomeViewModel!
 
-    @MainActor override func setUp() {
+    override func setUp() {
         super.setUp()
         homeViewModel = HomeViewModel()
     }
@@ -19,7 +19,7 @@ final class HomeViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    @MainActor func testFilterDesserts() {
+    func testFilterDesserts() {
         // Set the keyword
         homeViewModel.keyword = "Chocolate"
         
@@ -27,7 +27,7 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertEqual(homeViewModel.filteredDesserts.count, homeViewModel.desserts.filter { $0.name.lowercased().contains("chocolate") }.count)
     }
 
-    @MainActor func testSortDesserts() {
+    func testSortDesserts() {
         // Set isSorted to true
         homeViewModel.isSorted = true
 
