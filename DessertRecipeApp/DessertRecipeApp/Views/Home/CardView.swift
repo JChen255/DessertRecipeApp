@@ -19,6 +19,7 @@ struct CardView: View {
                 .padding(.horizontal, 10)
             HStack{
                 // Image view that supports cache mechanism
+                
                 CachedImage(url: URL(string: dessert?.thumbnailUrl ?? ""))
                 Text(dessert?.name ?? "Dessert Name")
                     .frame(maxWidth: .infinity, alignment: .center)

@@ -11,7 +11,18 @@ class RecipeDetailViewModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        viewModel = RecipeDetailViewModel()
+        viewModel = RecipeDetailViewModel(dataService: MockAPIService.shared)
+        
+        let expectation = XCTestExpectation(description: "Fetch recipes")
+
+        // Fetch data asynchronously
+        Task {
+            await viewModel.fetchRecipes(for: "mockRecipeId")
+            expectation.fulfill() // Fulfill the expectation when data is fetched
+        }
+
+        // Wait for the expectations to be fulfilled
+        wait(for: [expectation], timeout: 5.0) // Adjust timeout as needed
     }
     
     override func tearDown() {
@@ -20,56 +31,6 @@ class RecipeDetailViewModelTests: XCTestCase {
     }
     
     func testIngredients() {
-        // Create a sample Recipe with ingredients for testing.
-        let recipe = Recipe(name: "Test Recipe",
-                            category: "Test Category",
-                            area: "Test Area",
-                            instruction: "Test Instruction",
-                            thumbnailUrl: "Test Thumbnail",
-                            ingredient1: "Plain Flour",
-                            ingredient2: "Caster Sugar",
-                            ingredient3: "Butter",
-                            ingredient4: "",
-                            ingredient5: "",
-                            ingredient6: "",
-                            ingredient7: "",
-                            ingredient8: "",
-                            ingredient9: "",
-                            ingredient10: "",
-                            ingredient11: "",
-                            ingredient12: nil,
-                            ingredient13: "",
-                            ingredient14: "",
-                            ingredient15: nil,
-                            ingredient16: nil,
-                            ingredient17: nil,
-                            ingredient18: "",
-                            ingredient19: nil,
-                            ingredient20: "",
-                            measure1: "120g",
-                            measure2: "60g",
-                            measure3: "30g",
-                            measure4: "",
-                            measure5: "",
-                            measure6: "",
-                            measure7: "",
-                            measure8: "",
-                            measure9: nil,
-                            measure10: "",
-                            measure11: "",
-                            measure12: nil,
-                            measure13: "",
-                            measure14: "",
-                            measure15: nil,
-                            measure16: "",
-                            measure17: nil,
-                            measure18: "",
-                            measure19: "",
-                            measure20: nil
-                            )
-        
-        // Set the recipe in the view model.
-        viewModel.recipes = [recipe]
         
         // Get the ingredients from the view model.
         let ingredients = viewModel.ingredients

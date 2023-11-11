@@ -11,7 +11,7 @@ final class HomeViewModelTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        homeViewModel = HomeViewModel()
+        homeViewModel = HomeViewModel(dataService: MockAPIService.shared)
     }
 
     override func tearDown() {

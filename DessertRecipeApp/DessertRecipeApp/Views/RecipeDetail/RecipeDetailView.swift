@@ -8,7 +8,7 @@ import SwiftUI
 // Resuable view to display detailed info of each dessert recipe
 // Contains recipe image, name, category, area, instruction and ingredients list.
 struct RecipeDetailView: View {
-    @StateObject var recipeDetailViewModel = RecipeDetailViewModel()
+    @StateObject var recipeDetailViewModel = RecipeDetailViewModel(dataService: APIServices.shared)
     @State private var showInstruction: Bool = true
     var recipeId: String?
     

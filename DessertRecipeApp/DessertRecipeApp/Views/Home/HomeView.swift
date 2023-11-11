@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var homeViewModel = HomeViewModel()
+    @StateObject var homeViewModel = HomeViewModel(dataService: APIServices.shared)
     
     var body: some View {
         NavigationStack{
