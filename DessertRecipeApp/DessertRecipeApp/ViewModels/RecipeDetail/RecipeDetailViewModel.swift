@@ -10,6 +10,10 @@ import Foundation
 
 class RecipeDetailViewModel: ObservableObject {
     @Published var recipes = [Recipe]()
+    var dataService: DataService
+    init(dataService: DataService){
+        self.dataService = dataService
+    }
     
     // Return the first recipe in the 'recipes' array, if it exists.
     var recipe: Recipe?{
@@ -60,9 +64,10 @@ class RecipeDetailViewModel: ObservableObject {
     // Attempt to fetch recipe data from an API service based on the provided recipe ID.
     func fetchRecipes(for recipeId: String?) async {
         do {
-            let recipeData: Recipes = try await APIServices.fetchData(from: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId ?? "")")
+            let recipeData: Recipes = try await dataService.fetchData(from: "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(recipeId ?? "")")
             DispatchQueue.main.async {
                 self.recipes = recipeData.recipes
+                print("self.recipes", self.recipes)
             }
         } catch AppError.invalidUrl {
             print("Invalid Url")

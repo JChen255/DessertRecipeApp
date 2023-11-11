@@ -11,7 +11,12 @@ class HomeViewModel: ObservableObject {
     @Published var desserts = [Dessert]()
     @Published var keyword: String = ""
     @Published var isSorted = false
+    var dataService: DataService
     
+    init(dataService: DataService){
+        self.dataService = dataService
+    }
+
     // Computed property to get filtered desserts based on the keyword.
     var filteredDesserts: [Dessert] {
         guard !keyword.isEmpty else {return desserts}
@@ -32,7 +37,7 @@ class HomeViewModel: ObservableObject {
     // Function to fetch desserts asynchronously from an API.
     func fetchDesserts() async {
         do {
-            let desserts: Desserts = try await APIServices.fetchData(from: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
+            let desserts: Desserts = try await dataService.fetchData(from: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert")
             DispatchQueue.main.async {
                 self.desserts = desserts.desserts
             }
